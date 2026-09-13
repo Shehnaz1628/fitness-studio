@@ -1,0 +1,7 @@
+export { Footer } from './Footer/Footer'
+export { Hero } from './Hero/Hero'
+export { Manifesto } from './Manifesto/Manifesto'
+export { Recover } from './Recover/Recover'
+export { Story } from './Story/Story'
+export { Train } from './Train/Train'
+export { Visit } from './Visit/Visit'
