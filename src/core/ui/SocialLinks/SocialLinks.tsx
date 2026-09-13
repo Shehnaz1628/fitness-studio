@@ -14,40 +14,27 @@ const links: ReadonlyArray<{
   external?: boolean
 }> = [
   { href: contact.whatsappUrl, label: 'WhatsApp', icon: 'whatsapp', external: true },
-  {
-    href: contact.instagramUrl,
-    label: contact.instagramHandle,
-    icon: 'instagram',
-    external: true,
-  },
-  {
-    href: contact.mapsDirectionsUrl,
-    label: 'Directions',
-    icon: 'maps',
-    external: true,
-  },
-  {
-    href: `tel:${contact.phone}`,
-    label: contact.phoneDisplay,
-    icon: 'phone',
-  },
+  { href: contact.instagramUrl, label: 'Instagram', icon: 'instagram', external: true },
+  { href: contact.mapsDirectionsUrl, label: 'Directions', icon: 'maps', external: true },
+  { href: `tel:${contact.phone}`, label: contact.phoneDisplay, icon: 'phone' },
 ]
 
 export function SocialLinks({ className }: SocialLinksProps) {
   return (
     <ul
       className={cn(
-        'grid grid-cols-1 gap-3 border-t border-line-soft pt-6 min-[420px]:grid-cols-2 sm:flex sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-3 lg:gap-x-8',
+        'flex flex-wrap items-center gap-5 border-t border-line-soft pt-6 sm:gap-6',
         className,
       )}
     >
       {links.map((link) => (
-        <li key={link.label}>
+        <li key={link.icon}>
           <ContactLink
             href={link.href}
             label={link.label}
             icon={link.icon}
             external={link.external}
+            iconOnly
           />
         </li>
       ))}
